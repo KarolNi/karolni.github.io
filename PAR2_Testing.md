@@ -11,9 +11,10 @@ Test set of files:
 - text file 3.4kB
 - png image 785.6kB
 - jpg image 738.5kB
+
 total 1527580 bytes
 
-Set of par2 files created by PyPar2 (default settings)
+Set of par2 files created by PyPar2 (default settings).
 Test set has 1990 data blocks of 768 bytes (par2 metrics). Parity files has 5% (100 recovery blocks) of redundancy and total size of 1219776 bytes (1191.2kB). Size of all 7 parity files was 80% of original files.
 
 For bitrot protection par2 block should align with medium block. Modern hard drives claims that it won't return wrong data and entire rotten sector will return zeros (disks has own ECC). (Hypothesis - not tested yet)
