@@ -12,12 +12,12 @@ My adapter is USB3.0 Seagate STAE-104. It uses ASM1053 chip. It's USB vid and pi
 
 Turns out that couple kernel updates and my adapter now works in UAS mode (see https://en.wikipedia.org/wiki/USB_Attached_SCSI). The issue is that UAS on ASM1053 is little buggy - SMART does not work (it also has stability issue - my system froze two times on disconnecting USB). To fix it you need to tell the kernel to ignore UAS mode for this device and use legacy MSC mode. For hot fix (without rebooting):
 
-'''
+```
 # unmount and disconnect all USB storage devices
 sudo rmmod uas 
 sudo rmmod usb-storage
 sudo modprobe usb-storage quirks=0bc2:a013:u # you can put here your's device vid and pid, if you have issue with other device
-'''
+```
 
 Now SMART is read flawlessly with smartctl command.
 
